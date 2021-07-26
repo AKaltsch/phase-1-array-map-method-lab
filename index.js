@@ -30,23 +30,49 @@ const tutorials = [
 //   return tutorials.map(titleCase)
 // }
 
-function titleCased() {
-  return tutorials.map(string => titleCase(string))
-}
-
-function titleCase(str) {
-  let strLowerCase = str;
-  let wordArr = strLowerCase.split(" ").map(function(currentValue) {
-      return currentValue[0].toUpperCase() + currentValue.substring(1);
-  });
-
-  return wordArr.join(" ");
-}
-
-console.log(titleCase('what is the difference between event capturing and bubbling?'))
-
-console.log(titleCased(tutorials))
-
-// function titleCases(item) {
-
+// function titleCased() {
+//   return tutorials.map(str => titleCase(str))
 // }
+
+// function titleCase(str) {
+//   let strLowerCase = str;
+//   let wordArr = strLowerCase.split(" ").map(function(currentValue) {
+//       return currentValue[0].toUpperCase() + currentValue.substr(1);
+//   });
+
+//   return wordArr.join(" ");
+// }
+
+// console.log(titleCase('what is the difference between event capturing and bubbling?'))
+
+// console.log(titleCased(tutorials))
+
+// // function titleCases(item) {
+
+// // }
+
+// ------------------------------------------------------------------
+
+function titleCased() {
+  return tutorials.map(lines => {
+    let words = lines.split(' ')
+    let capWords = words.map(word =>{
+      return word[0].toUpperCase() + word.slice(1)
+    })
+    let capString = capWords.join(' ')
+    return capString
+  })
+}
+titleCased()
+
+
+
+
+
+
+
+
+
+
+
+
